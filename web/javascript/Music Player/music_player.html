@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>music player</title>
+	<link rel="stylesheet" type="text/css" href="music_player_style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+<body>
+
+	<section id="app">
+		<button id="menu" class="menu"><i class="fa fa-bars menu" aria-hidden="true"></i></button>
+
+		<div class="listBox">
+			<h1>AUDIO LIST</h1>
+			<ol id="lists"></ol>
+		</div>
+
+		<div class="soundBox">
+			<button class="sound soundUp"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+			<button class="sound soundDown"><i class="fa fa-volume-down" aria-hidden="true"></i></button>
+		</div>
+		<h1 class="trackTitle">Music</h1>
+		<div class="homeDiv">
+			<img src="" alt="" id="musicImg">
+		</div>
+		<footer class="bottom">
+			<div class="timeBox">
+				<span class="timing start">00:00</span>
+				<span class="timing end">05:00</span>
+			</div>
+
+			<input type="range" name="range_bar" id="rangeBar" title="00:00" min="0" value="0">
+			
+			<div class="controlBox">
+				<span class="controls prePlay"><i class="fa fa-backward" aria-hidden="true"></i></span>
+				<span class="controls curPlay"><i class="fa fa-play" aria-hidden="true"></i></span>
+				<span class="controls nextPlay"><i class="fa fa-forward" aria-hidden="true"></i></span>
+			</div>
+		</footer>
+	</section>
+
+	<section id="audioBox"></section>
+
+
+	<script src="music_player_script.js"></script>
+</body>
+</html>
