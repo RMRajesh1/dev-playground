@@ -14,10 +14,24 @@ These projects helped me practice and understand:
 
 ---
 
+## 🌐 Projects Overview (GitHub Pages)
+
+All JavaScript projects are listed and accessible from a single **overview / launcher page**:
+
+🔗 **https://rmrajesh1.github.io/dev-playground/web/javascript/**
+
+This page provides:
+- A visual list of all projects
+- Direct navigation to each live demo
+- Dark / Light theme support
+- A clean dashboard-style layout
+
+---
+
 ## 🎮 JavaScript Demos (GitHub Pages)
 
 All projects are hosted for free using **GitHub Pages**.  
-Click any link below to try the live demo.
+You can access individual live demos directly below.
 
 | Project | Live Demo |
 |-------|-----------|
