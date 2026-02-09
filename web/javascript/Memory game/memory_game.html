@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Memory_game</title>
+	<link rel="stylesheet" type="text/css" href="memory_game_style.css">
+</head>
+<body onload="newGame()">
+	<section class="game-container">
+		<section class="gameplay sec">
+			<h1>Guess to win! </h1>
+			<div class="navbar">
+				<div>Score : <span id="score">0</span></div>
+				<div>Time : <span id="time">0</span></div>
+				<div>Attempt : <span id="chance">0</span></div>
+			</div>
+			<div id="play_ground">
+				<!-- Boxes -->
+			</div>
+			<div class="btnDiv">
+				<button class="btns restart" onclick="restart()">Restart</button>
+				<button class="btns AI_play" onclick="AI_play()">AI Play</button>
+				<button class="btns newGame" onclick="newGame()">New Game</button>
+			</div>
+		</section>
+	</section>
+	
+	<script src="memory_game_AI_script.js"></script>
+<!-- 	<script src="memory_game_script.js"></script>
+ --></body>
+</html>
+
+
+<!-- <div onclick="flipMe(this)" class="flip_boxes">
+	<div class="front page">
+		<img src="'+THINKING[rand(THINKING.length-1)]+'" class="thinking">
+	</div>
+
+	<div class="back page">
+		<img src="./pokemons/'+shuffled[i].img+'" class="flip_imgs">
+		<h3>'+shuffled[i].name+'</h3>
+	</div>
+</div> -->
+
+
+<!-- <div onclick="flipMe(this)" class="flip_boxes"><div class="front page"><img src="'+THINKING[rand(THINKING.length-1)]+'" class="thinking"></div><div class="back page"><img src="./pokemons/'+shuffled[i].img+'" class="flip_imgs"><h3>'+shuffled[i].name+'</h3></div></div> -->
