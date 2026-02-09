@@ -1,0 +1,157 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	box-sizing: border-box;
+	transition: 0.3s;
+	border-radius: 10px;
+}
+body, #game-container, #intro-sec, #intro-list, #game-playGround, #temp-ground, #current, #current>div, #chooseLevel, #final-sec, #ground{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+    font-family: 'Goldman', cursive;
+}
+#game-container{
+	width: 100vw;
+	height: 100vh;
+	background-color: #fff3b0;
+}
+#intro-sec{
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	align-items: center;
+	background-color: #ff7d00;
+}
+#welcome{font-size: 60px;}
+#intro-list{
+	width: 50%;
+	height: 60%;
+}
+#intro-list .list{
+	font-size: 25px;
+	width: 60%;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro-list .list:hover{transform: scale(1.05);}
+#intro-list .list:nth-child(1){background-color: #e5383b;}
+#intro-list .list:nth-child(4){color: #000; background-color: #00b4d8;}
+#intro-list .list:nth-child(2){background-color: #2b9348;}
+#intro-list .list:nth-child(3){color: #000; background-color: #ffd500;}
+#toStart{font-size: 30px; cursor: pointer;}
+#toStart:hover{transform: scale(1.1);}
+#toStart:active{transform: scale(1);}
+#name{
+	margin: auto;
+	width: 40%;
+	color: #ffbe0b;
+	font-size: 50px;
+	border-radius: 30px;
+	background-color: #c44536;
+}
+#game-playGround, #final-sec{
+	width: 100%;
+	height: 100%;
+	display: none;
+	opacity: 0;
+}
+#temp-ground{
+	width: 100%;
+	height: 90%;
+	flex-direction: row;
+}
+#ground{width: 50%; border: 2px solid transparent;}
+#current, #chooseLevel{
+	width: 16%;
+	background-color: #00b2ca;
+}
+#current>div{
+	width: 80%;
+	height: 10%;
+	color: #fff;
+	font-size: 25px;
+	background-color: #234938;
+	flex-direction: row;
+	border-radius: 10px;
+	border: 1px solid #000;
+}
+#current>div>span{
+	width: 30%;
+	display: inline-block;
+	border-radius: 10px;
+	background-color: #873748;
+}
+#chooseLevel>button, #reset, #restart{
+	width: 80%;
+	height: 10%;
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 30px;
+	border-radius: 10px;
+	background-color: #734232;
+	transition: 0.2s;
+	cursor: pointer;
+    font-family: 'Bree Serif', serif;
+}
+#chooseLevel>button:hover{
+	color: #0f0f;
+	background-color: #837487;
+}
+#reset{background-color: #e5383b;}
+#reset:hover{
+	color: #f00;
+	background-color: #55a630;
+}
+button:active{transform: scale(0.9);}
+#ground{
+	width: 65%;
+	height: 90%;
+	flex-direction: row;
+}
+.holes{
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+	background: url("dirt.svg") no-repeat;
+	background-position: 50% 250%;
+	background-size: 90% 90%;
+}
+.holes>span{
+	display: inline-block;
+	width: 90%;
+	height: 70%;
+	overflow: hidden;
+}
+.mole{
+	width: 180px;
+	height: 180px;
+	cursor: pointer;
+	transform: translateY(10%);
+	transition: 0.3s;
+}
+#hammer{
+	width: 150px;
+	height: 150px;
+}
+#final-sec{
+	align-items: center;
+	background-color: #8093f1;
+}
+#theEnd{font-size: 60px;}
+#endHighScore{font-size: 40px;}
+#setEndHighScore{color: #fdc500;}
+#endMole{width:250px; height:250px;}
+#final-sec>h3{font-size: 30px;}
+#restart{
+	width: 300px;
+	height: 50px;
+	border-radius: 30px;
+}
+#audios{display: none;}
