@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>JavaScript Projects – Dev Playground</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<style>
+		:root {
+		  --bg: #0f172a;
+		  --bg-card: #020617;
+		  --border: #1e293b;
+		  --text: #e5e7eb;
+		  --muted: #94a3b8;
+		  --accent: #38bdf8;
+		}
+
+		[data-theme="light"] {
+		  --bg: #f8fafc;
+		  --bg-card: #ffffff;
+		  --border: #e2e8f0;
+		  --text: #0f172a;
+		  --muted: #475569;
+		  --accent: #0284c7;
+		}
+
+		* {
+		  box-sizing: border-box;
+		}
+
+		body {
+		  margin: 0;
+		  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+		  background: var(--bg);
+		  color: var(--text);
+		  transition: background 0.2s ease, color 0.2s ease;
+		}
+
+		header {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  padding: 20px 24px;
+		  border-bottom: 1px solid var(--border);
+		  background: var(--bg-card);
+		}
+
+		header h1 {
+		  margin: 0;
+		  font-size: 26px;
+		}
+
+		header p {
+		  margin: 6px 0 0;
+		  color: var(--muted);
+		  font-size: 14px;
+		}
+
+		.title {
+		  display: flex;
+		  flex-direction: column;
+		}
+
+		.theme-toggle {
+		  cursor: pointer;
+		  background: transparent;
+		  border: 1px solid var(--border);
+		  border-radius: 20px;
+		  padding: 6px 14px;
+		  color: var(--text);
+		  font-size: 14px;
+		}
+
+		main {
+		  max-width: 1000px;
+		  margin: 0 auto;
+		  padding: 24px;
+		}
+
+		.grid {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		  gap: 16px;
+		}
+
+		.card {
+		  background: var(--bg-card);
+		  border: 1px solid var(--border);
+		  border-radius: 12px;
+		  padding: 16px;
+		  transition: transform 0.15s ease, box-shadow 0.15s ease;
+		}
+
+		.card:hover {
+		  transform: translateY(-4px);
+		  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+		}
+
+		.card a {
+		  text-decoration: none;
+		  color: var(--accent);
+		  font-size: 18px;
+		  font-weight: 600;
+		}
+
+		.card p {
+		  margin-top: 8px;
+		  font-size: 14px;
+		  color: var(--muted);
+		}
+
+		footer {
+		  text-align: center;
+		  padding: 20px;
+		  font-size: 13px;
+		  color: var(--muted);
+		}
+	</style>
+</head>
+<body>
+
+<header>
+	<div class="title">
+		<h1>JavaScript Projects</h1>
+		<p>Mini-apps & games built with HTML, CSS, and JavaScript</p>
+	</div>
+	<button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+</header>
+
+<main>
+	<div class="grid">
+
+		<div class="card">
+			<a href="./Break%20Brick%20game/">Break Brick Game</a>
+			<p>Classic brick breaker arcade game</p>
+		</div>
+
+		<div class="card">
+			<a href="./Falling%20ball/">Falling Ball</a>
+			<p>Ball movement and collision mechanics</p>
+		</div>
+
+		<div class="card">
+			<a href="./Find%20The%20Avatar%20Spirit/">Find The Avatar Spirit</a>
+			<p>Find-and-discover style game</p>
+		</div>
+
+		<div class="card">
+			<a href="./Jumble%20game/">Jumble Game</a>
+			<p>Word scramble puzzle</p>
+		</div>
+
+		<div class="card">
+			<a href="./Kanban%20Board/">Kanban Board</a>
+			<p>Task management board</p>
+		</div>
+
+		<div class="card">
+			<a href="./Key%20finder/">Key Finder</a>
+			<p>Keyboard interaction game</p>
+		</div>
+
+		<div class="card">
+			<a href="./Maths%20Game/">Maths Game</a>
+			<p>Math challenges and quizzes</p>
+		</div>
+
+		<div class="card">
+			<a href="./Memory%20game/">Memory Game</a>
+			<p>Card matching memory game</p>
+		</div>
+
+		<div class="card">
+			<a href="./Mole%20game/">Mole Game</a>
+			<p>Whack-a-mole style game</p>
+		</div>
+
+		<div class="card">
+			<a href="./Music%20Player/">Music Player</a>
+			<p>Web-based audio player</p>
+		</div>
+
+		<div class="card">
+			<a href="./Pop%20letters%20game/">Pop Letters Game</a>
+			<p>Letter popping interaction game</p>
+		</div>
+
+		<div class="card">
+			<a href="./Tic%20Tac%20Toe/">Tic Tac Toe</a>
+			<p>Classic X-O board game</p>
+		</div>
+
+		<div class="card">
+			<a href="./Timer%20App/">Timer App</a>
+			<p>Timer and stopwatch utility</p>
+		</div>
+
+		<div class="card">
+			<a href="./Type%20test%20app/">Type Test App</a>
+			<p>Typing speed and accuracy test</p>
+		</div>
+
+	</div>
+</main>
+
+<footer>
+	© Dev Playground – JavaScript Experiments
+</footer>
+
+<script>
+	const toggleBtn = document.getElementById("themeToggle");
+	const root = document.documentElement;
+
+	const savedTheme = localStorage.getItem("theme") || "dark";
+	setTheme(savedTheme);
+
+	toggleBtn.addEventListener("click", () => {
+	  const newTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+	  setTheme(newTheme);
+	});
+
+	function setTheme(theme) {
+	  if (theme === "light") {
+		root.setAttribute("data-theme", "light");
+		toggleBtn.textContent = "☀️ Light";
+	  } else {
+		root.removeAttribute("data-theme");
+		toggleBtn.textContent = "🌙 Dark";
+	  }
+	  localStorage.setItem("theme", theme);
+	}
+</script>
+
+</body>
+</html>
