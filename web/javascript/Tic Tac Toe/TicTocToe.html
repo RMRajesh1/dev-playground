@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" >
+	<link rel="icon" type="image/png" href="splash.png">
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="TicTocToe_style.css">
+	 <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Texturina:wght@100&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body onkeydown="keyEvents(event)">
+	<section id="beginSec">
+		<h1>🎉 Welcome to the 🙏 game</h1>
+		<h2>Let's 🎮 play!</h2>
+		<h3> Tic Tac Toe </h3>
+		<p onclick="startGame()" id="startGame">click to start! 🚩</p>
+	</section>
+
+	<section class="container" id="container">
+		<h1 id="topic">TIC TAC TOE</h1>
+		<div class="navbar">
+			<div class="label" id="userScoreLabel">Score 🤟 :<span id="user_score" class="spans">0</span></div>
+			<div class="label matchCount">Match ⏳ : <span id="matchCount" class="spans">0</span></div>
+			<div class="label timer">Time ⏳ : <span id="timer" class="spans">60</span></div>
+			<div class="label" id="cpuScoreLabel">CPU 🖥 : <span id="cpu_score" class="spans">0</span></div>
+		</div>
+		<section class="game-container" id="game-container">
+			<h2 id="turns">Tic Tac Toe</h2>
+			<div id="fields"></div>
+			<div id="resultBox">WHO WINS?</div>
+		</section>
+	</section>
+
+	<section id="TheEnd">
+		<div>
+			<h1>Thanks for your support</h1>
+			<h2>Hope you enjoyed the game</h2>
+			<p>🙏</p>
+		</div>
+	</section>
+
+	<div class="btns" id="btns">
+		<button class="btn" id="playAgainBtn" onclick="playAgain()">play again</button>
+		<button class="btn" id="newGameBtn" onclick="newGame()">New Game</button>
+	</div>
+
+	<div class="audios">
+		<audio id="audio1" src="lv_fruit1.wav">
+		<audio id="audio2" src="Ping_Pong_wav.mp3">
+		<audio id="audio3" src="dump.mpg">
+		<audio id="audio4" src="jump.mpg">
+		<audio id="audio5" src="completed-ding-futuro.mpg">
+		<audio id="audio6" src="magic-spell-vibes.mpg">
+	</div>
+
+	<script src="TicTocToe_script.js"></script>
+</body>
+</html>
