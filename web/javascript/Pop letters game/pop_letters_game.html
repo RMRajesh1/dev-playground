@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>pop letters game</title>
+	<link rel="stylesheet" type="text/css" href="pop_letters_game_style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+
+	<div class="intro sec">
+		<ul class="ulBox">
+			<li class="lst">POP THE STARS</li>
+			<li class="lst">Let's enjoy the pop game</li>
+			<li class="lst">Here you need to pop the stars</li>
+			<li class="lst">Press the key based on the alphabets</li>
+			<li class="lst btnLst">
+				<button class="btn easy">EASY</button>
+				<button class="btn medium">MEDIUM</button>
+				<button class="btn hard">HARD</button>
+				<button class="btn extreme">EXTREME</button>
+			</li>
+			<li class="lst" onclick="startGame()">Click to&nbsp;"START"</li>
+		</ul>
+	</div>
+
+	<section class="page sec">
+		<h1 class="head">POP THE STARS</h1>
+		<button class="slide left">
+			<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+		</button>
+		<button class="slide right">
+			<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+		</button>
+		<div class="notificationBox innerBoxes">
+			<div class="elements time">Time : <span>0</span></div>
+			<div class="elements level">Level : <span>Easy</span></div>
+			<div class="elements score">Score : <span>0</span></div>
+			<div class="elements target">Target : <span>250</span></div>
+			<button class="elements playAgain btn">New game</button>
+		</div>
+		<div class="btnBox innerBoxes">
+			<div class="btn">LEVELS</div>
+			<button class="btn easy">EASY</button>
+			<button class="btn medium">MEDIUM</button>
+			<button class="btn hard">HARD</button>
+			<button class="btn extreme">EXTREME</button>
+		</div>
+		<div class="result">
+			<h2 class="msg">Good job</h2>
+			<p>Your score : <span id="score">0</span></p>
+			<button class="elements btn" id="playAgain">Play again</button>
+			<p>The game will begin shortly</p>
+			<h3 class="restartTimer">5</h3>
+		</div>
+	</section>
+
+	<section class="audios">
+		<audio src="pikachu.mp3"></audio>
+		<audio src="Pling-KevanGC-1485374730.mp3.mpg"></audio>
+		<audio src="completed-ding-futuro_MJw36SNO_NWM.mp3.mpg"></audio>
+		<audio src="Ping_Pong_wav.mp3"></audio>
+	</section>
+
+	<script src="pop_letters_game_script.js"></script>
+
+</body>
+</html>
