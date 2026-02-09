@@ -1,0 +1,241 @@
+ @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Redressed&family=Roboto+Slab:wght@300&family=Rye&display=swap');
+
+
+*{
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	box-sizing: border-box;
+	font-family: 'Langar', cursive;
+	transition: 0.3s;
+	border-radius: 5px;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000;
+	position: relative;
+}
+#container_board{
+	width: 90%;
+	height: 90%;
+	background-color: #f9dcc4;
+	border-radius: 20px;
+	position: relative;
+	overflow: auto;
+}
+body, #container_board, #board, #heading, .h2ele, #form_sec, #form_sec>form, #form_sec>form>div, .lists, .lists>.content{
+	display: flex;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+#heading{
+	height: 8%;
+	width: 100%;
+	font-size: 3em;
+	background-color: #bb9457;
+}
+#board{
+	height: 92%;
+	width: 100%;
+}
+.sec{
+	width: 23%;
+	height: 90%;
+	background-color: #ddbea9;
+	border-radius: 10px;
+	overflow: auto;
+    overflow-x: hidden;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+/*    -ms-overflow-style: none; /* IE 11 */
+    /*scrollbar-width: none; /* Firefox 64 */
+}
+/*.sec::webkit-scrollbar{width: 0px;}
+*/#addBtn{
+	/*width: 95%;*/
+	width: auto;
+	color: #000;
+	font-size: 1.5em;
+    font-family: 'Rye', cursive;
+    background-color: transparent;
+    position: absolute;
+    right: 5%;
+}
+.h2ele{
+	color: #fff;
+	width: 100%;
+	height: 2em;
+	background-color: #8a817c;
+	position: relative;
+}
+
+.lists{
+	margin-top: 1em;
+	width: 95%;
+	border-radius: 10px;
+	border-left: 5px solid transparent;
+	background-color: rgba(120, 70, 50, 0.8);
+	min-height: 6em;
+}
+.lists> .content{
+	width: 85%;
+	min-height: 6em;
+	background-color: #fdf;
+}
+.lists> .iconBox{
+	width: 15%;
+	align-self: stretch;
+}
+.lists>.content>*{
+	width: 95%;
+}
+.lists>.content>h2{
+	color: #fb5607;
+    font-family: 'Pirata One', cursive;
+	border-bottom: 2px solid grey;
+}
+.lists>.content>p{
+    font-family: 'Roboto Slab', serif;
+}
+.lists>.content>h4{
+	color: #9c6644;
+    font-family: 'Redressed', cursive;
+}
+.iconBox{
+	color: #fff;
+	font-size: 1.5em;
+	display: grid;
+	grid-template-columns: auto;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+}
+
+#form_sec{
+	width: 100%;
+	height: 100%;
+	font-size: 3em;
+	position: absolute;
+	top: 0; left: 0;
+	border: 3px solid #000;
+	background-color: rgba(0, 0, 0, 0.8);
+	opacity: 0;
+}
+#form_sec>form{
+	width: 35%;
+	height: 70%;
+	font-size: 0.5em;
+	border-radius: 10px;
+	background-color: #ddbea9;
+	flex-direction: column;
+}
+#form_sec>form>div{ width: 80%; }
+#form_sec>form>div>span{
+	display: inline-block;
+	width: 50%;
+}
+#form_sec>form input{
+	height: 3em;
+	width: 60%;
+	font-size: 0.8em;
+	padding: 0px 10px;
+	text-align: left;
+}
+#form_sec>form input[type="date"]{
+	width: 60%;
+	font-size: 0.5em;
+}
+#form_sec>form label{
+	padding: 10px;
+	width: 40%;
+}
+#form_sec>form textarea{
+	width: 100%;
+	height: 70%;
+	padding: 10px;
+	text-align: left;
+}
+.msg{
+	color: #f00;
+	opacity: 0;
+	font-size: 0.9em;
+}
+#form_heading{
+	border-radius: 5px;
+	border-bottom: 3px solid #f00;
+}
+#addForm{
+	width: 30%;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 0.8em;
+	background-color: #fff;
+}
+
+
+/* ------------- */
+.scaleDown{
+	opacity: 0;
+	border-radius: 50%;
+	transform: scale(0);
+}
+.scaleUp{
+	opacity: 1;
+	border-radius: 0%;
+	transform: scale(1);
+}
+.rotate{transform: rotate(360deg);}
+/* ------------- */
+.show{display: flex;}
+.hide{display: none;}
+/* ------------- */
+.dragstart{transform: scale(0.9);}
+.dragend{transform: scale(1);}
+.bgColor{background-color: #dda15e;}
+.checked{color: green;}
+.opacityPlus{opacity: 1;}
+.opacityMinus{opacity: 0;}
+
+.closeForm{
+	position: absolute;
+	top: 5%; right: 5%;
+	color: #fff;
+}
+.description{resize: none;}
+
+a{
+	color: #3a86ff;
+	text-decoration: none;
+}
+button{
+	border: none;
+	outline: none;
+	padding: 5px;
+	cursor: pointer;
+}
+i{cursor: pointer;}
+button:active{transform: scale(0.9);}
+
+
+
+@media only screen and (max-width: 750px){
+
+
+*{
+	transition: 0.2s;
+}
+#board{display: block;}
+#heading{	font-size: 2em; }
+.h2ele{	font-size: 1em; }
+.sec{	width: 95%; margin-top: 10px; height: auto; padding: 2em 0px;}
+
+#form_sec{width: 100vw;}
+#form_sec>form{width: 95%; flex-direction: column;}
+#form_sec>form input{font-size: 1em; height: 1.5em;}
+#form_sec>form>div{width: 95%;}
+#form_sec>form>div>label{width: 40%; font-size: 0.8em;}
+#form_sec>form>div>span{width: auto;}
+
+
+}

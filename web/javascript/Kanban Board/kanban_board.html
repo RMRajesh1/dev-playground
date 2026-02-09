@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>kanban_board</title>
+	<link rel="stylesheet" type="text/css" href="kanban_board_style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<section id="container_board">
+		<h1 id="heading">Kanban board</h1>
+		<section id="board">
+			<div class="sec addItems">
+				<h2 class="h2ele">Task List&nbsp;&nbsp;<button id="addBtn" class="addBtn" type="button"><i class="fa fa-plus-square-o addBtn" aria-hidden="true"></i></button> </h2>
+			</div>
+			<div class="sec inProgress">
+				<h2 class="h2ele">In progress</h2>
+			</div>
+			<div class="sec marked">
+				<h2 class="h2ele">Marked tasks</h2>
+			</div>
+			<div class="sec completed">
+				<h2 class="h2ele">Completed Tasks</h2>
+			</div>
+		</section>
+	</section>
+
+	<section id="form_sec">
+		<i class="fa fa-window-close closeForm" aria-hidden="true"></i>
+		<form name="form">
+			<h1 id="form_heading">Data Form</h1>
+			<div><label>Task Name</label><input type="text" name="taskname" placeholder="Enter the task..."></div>
+			<div><label>Project link</label><input type="url" name="taskurl" placeholder="Enter the url..."></div>
+			<div><label>description</label><br><textarea class="description" name="projectDesc" placeholder="Describe your project..."></textarea></div>
+			<div>
+				<span><label>From</label><input type="date" name="date1" class="dateBox"></span> <!-- value="2021-01-04" -->
+				<span><label>To</label><input type="date" name="date2" class="dateBox"></span> <!-- value="2021-01-10" -->
+			</div>
+			<div class="msg">Please check your inputs</div>
+			<button id="addForm" class="addForm" type="button">Submit</button>
+		</form>
+	</section>
+
+	<script src="kanban_board_script.js"></script>
+</body>
+</html>
