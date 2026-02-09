@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+body{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+body, .result{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(162, 155, 254,1.0);
+}
+#game{
+	width: 500px;
+	height: 800px;
+	border: 1px solid black;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: rgba(253, 121, 168,1.0);
+	position: relative;
+}
+#character{
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	border-radius: 50%;
+	position: relative;
+	top: 440px; 
+	left: 190px;
+	z-index: 1000;
+}
+
+.block{
+	width: 500px;
+	height: 30px;
+	position: relative;
+	top: 100px;
+	margin-top: -30px;
+}
+.hole{
+	width: 45px;
+	height: 30px;
+	background-color: white;	/* put the same color like game background*/
+	position: relative;
+	top: 100px;
+	margin-top: -30px;
+	background-color: rgba(253, 121, 168,1.0);
+	/*clip-path: polygon(14% 40%, 10% 19%, 0 0, 100% 0, 91% 20%, 87% 39%, 87% 58%, 91% 79%, 100% 100%, 0 100%, 10% 80%, 14% 58%);*/
+	/*clip-path: polygon(15% 40%, 11% 20%, 0 0, 100% 0, 90% 20%, 85% 39%, 86% 59%, 90% 79%, 100% 100%, 0 100%, 11% 80%, 14% 58%);*/
+	/*border: 1px solid #f00;*/
+}
+.spans{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 0;
+	z-index: 10000;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	transform: rotate(180deg);
+	background-color:rgba(24, 44, 97,1.0);
+}
+
+
+.result{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(99, 110, 114,1.0);
+	border-radius: 10px;
+	transition: 1s;
+
+	/*animation: setZoom 1s linear;*/
+}
+
+@keyframes setZoom{
+	0%{transform: scale(0);}
+	100%{transform: scale(1);}
+}
+.para{
+	font-size: 30px;
+	color: #fff;
+}
