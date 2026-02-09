@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>jumbles</title>
+	<link href="jumbles_style.css" rel="stylesheet" type="text/css" />
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<section id="big-container">
+		<secton id="play-container">
+			<img src="jumbleGame.png" id="image" />
+			<h1 id="topic">JUMBLE  GAME</h1>
+			<div id="words">New Round!</div>
+			<h4 id="note">find out what the exact word is? 🤔</h4>
+			<div id="user-field">
+				<input type="text" id="user" autocomplete="off" autofocus="" />
+				<button onclick="guessed()" id="btn">Check!</button>
+				<div id="duration">30</div>
+				<div id="timeTaken">Have fun</div>
+			</div>
+		</secton>
+		<audio id="audio">
+			<source src="Ping_Pong_wav.mp3" type="audio/mp3">
+		</audio>
+		<section id="intro-sec">
+			<div id="info-div">
+				<p class="about" id="info-1">Hi! welcome to the game</p>
+				<p class="about" id="info-2">Here we will give you some jumbled words</p>
+				<p class="about" id="info-3">You should find out what the exact word is...</p>
+				<p class="about" id="info-4">Click! to start and Enjoy</p>
+			</div>
+			<button id="start" onclick="startGame()">Start&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true" id="start-icon"></i></button>
+		</section>
+	</section>
+
+	<script type="text/javascript" src="jumbles_script.js"></script>
+</body>
+</html>
