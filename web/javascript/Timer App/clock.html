@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+			text-align: center;
+			border-radius: 10px;
+			color: #fff;
+		}
+		body{
+			background-color: #000;
+		}
+		#container{
+			width: 1000px;
+			height: 700px;
+			margin: 100px auto;
+			border: 10px solid #0f0;
+			border-radius: 50px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		#topic{
+			font-size: 60px;
+			margin: 30px;
+			border-bottom: 4px dotted #0f0;
+		}
+		#time{
+			width: 75%;
+			margin: 100px auto 50px;
+			padding: 10px;
+			color: #ffb703;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			font-size: 100px;
+		}
+		#time>span>span{
+			font-size: 100px;
+			padding: 10px;
+			background-color: transparent;
+			box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.75);
+		}
+		#time>span>p{
+			font-size: 25px;
+		}
+		#time>span>#meri{
+			font-size: 50px;
+		}
+		#description{
+			margin: 50px;
+			padding: 10px;
+			border-radius: 40px;
+			border: 2px solid red;
+			transition: 0.5s;
+		}
+		#description:hover{
+			border-color: #fff;
+			cursor: pointer;
+			color: #ffb703;
+		}
+	</style>
+</head>
+<body onload="clock();">
+
+	<section id="container">
+		<div id="topic">Clock</div>
+		<div id="time">
+			<span>
+				<span id="hour">00</span>
+				<p>Hours</p>
+			</span>:
+			<span>
+				<span id="min">00</span>
+				<p>Minutes</p>
+			</span>:
+			<span>
+				<span id="sec">00</span>
+				<p>Seconds</p>
+			</span>
+			<span>
+				<span id="meri">AM</span>
+			</span>
+		</div>
+		<div id="description">A digital clock made by a part of web development</div>
+	</section>
+
+	<script type="text/javascript">
+		let ch, cm, cs, meri, time;
+
+		function clock(){
+			time = new Date();
+			ch = time.getHours();
+			cm = time.getMinutes();
+			cs = time.getSeconds();
+			meri = "AM";
+			if (ch>12){ch -= 12; meri = "PM"}
+			digits();
+			_("hour").innerText = ch;
+			_("min").innerText = cm;
+			_("sec").innerText = cs;
+			_("meri").innerText = meri;
+			let circulate = setInterval(clock, 500);
+		}
+		function digits(){
+  			if (p(cs) <10) {cs = "0" + p(cs)}
+  			if (p(cm) <10) {cm = "0" + p(cm)}
+  			if (p(ch)<10) {ch = "0" + p(ch)}
+		}
+		function p(source){	return parseInt(source);  }
+		function _(name){ return document.getElementById(name);	}
+	</script>
+</body>
+</html>

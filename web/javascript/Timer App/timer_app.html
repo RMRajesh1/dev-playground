@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Timer App</title>
+	<link href="timer_app_style.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne+Tactile&display=swap" rel="stylesheet">
+</head>
+<body onload="startClock()">
+	<section id="container">
+		<section class="navbar">
+			<button onclick="mode('stopwatch_pack')">STOPWATCH</button>
+			<button onclick="mode('timer_pack')">TIMER</button>
+			<button onclick="mode('clock_pack')">CLOCK</button>
+		</section>
+		<section class="timerApp" id="stopwatch_pack">
+			<h1>STOPWATCH</h1>
+			<p id="stopwatch">00 : 00 : 00 : 00</p>
+			<div>
+				<button onclick="start('stopwatch')" id="startBtn1">START</button>
+				<button onclick="pause('stopwatch')">PAUSE</button>
+				<button onclick="reset('stopwatch')">RESET</button>
+			</div>
+		</section>
+		<section class="timerApp" id="timer_pack">
+			<h1>TIMER</h1>
+			<p id="timer">00 : 00 : 00 : 00</p>
+			<div>
+				<button onclick="start('timer')" id="startBtn2">START</button>
+				<button onclick="pause('timer')">PAUSE</button>
+				<button onclick="reset('timer')">RESET</button>
+			</div>
+			<div><input type="number" value="10" id="inputBox" autocomplete="off" />&nbsp;&nbsp;&nbsp;<label id="note">Minutes</label></div>
+		</section>
+		<section class="timerApp" id="clock_pack">
+			<h1>CLOCK</h1>
+			<p id="clock"></p>
+			<span>Current time in India</span>
+		</section>
+	</section>
+
+	<script src="timer_app_script.js"></script>
+</body>
+</html>
