@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/png" href="maths-logo2.png">
+	<title>Maths Game</title>
+	<link rel="stylesheet" type="text/css" href="MathsGame_style.css">
+	 <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body onkeydown="keyEvents(event)">
+	<section id="game-container">
+		<section id="intro-sec">
+			<h1 id="topic">MATHS &#128278; PLAY &#128421; GROUND</h1>
+			<section id="instruction">
+				<div id="slide-instructions">
+					<label for="sec1">1</label>
+					<label for="sec2">2</label>
+				</div>
+				<input type="radio" id="sec1" name="group" />
+				<input type="radio" id="sec2" name="group" />
+				<ul id="instruct1">
+					<li>Here, you can enjoy by solving &#10024; the maths</li>
+					<li>You should select the &#127922; variations &#127991; of maths</li>
+					<li>Then, you can get &#127881; fun with these &#127776; challenges</li>
+				</ul>
+				<ul id="instruct2">
+					<li>While playing, you should watch the &#8987; time duration</li>
+					<li>Scores will be increased by won the challenge</li>
+					<li>Let's start with the <q>cool &#9889; mind</q></li>
+				</ul>
+			</section>
+			<div id="motivate">You're UNIQUE &#9925;, don't be a follower</div>
+			<div id="startGame" onclick="startGame()">Get start by pressing <q>Enter</q> or Click here!</div>
+		</section>
+		<section id="game-sec">
+			<img src="maths-banner.jpg" id="banner" />
+			<section id="operations">
+				<div id="slider-sec" class="grid-items item1">
+					<div>
+						<label for="rangebar1">Number 1 : <span id="num1">0</span></label>
+						<input type="range" id="rangebar1" class="sliderBar" min="1" max="100" oninput="setNum()"/>
+					</div>
+					<div>
+						<label for="rangebar2">Number 2 : <span id="num2">1</span></label>
+						<input type="range" id="rangebar2" class="sliderBar" min="1" max="100" oninput="setNum()"/>
+					</div>
+				</div>
+				<div id="timer-sec" class="grid-items item2">
+					<div id="setTimer">15</div>
+					<div><span id="currentQuiz">0</span> / <span id="noQues">6</span></div>
+				</div>
+				<section id="select-section" class="grid-items item3">
+					<h2 id="selecth2">Select operations!</h2>
+					<div id="operatorsBox">
+						<div><label for="addition" class="switch"><input type="checkbox" id="addition" class="check" onchange="checkboxesfunct(this)" value="+"/><span class="slider round"></span></label><span class="desc">Addition</span></div>
+						<div><label for="subtraction" class="switch"><input type="checkbox" id="subtraction" class="check" onchange="checkboxesfunct(this)" value="-" /><span class="slider round"></span></label><span class="desc">Subtraction</span></div>
+						<div><label for="multiplication" class="switch"><input type="checkbox" id="multiplication" class="check" onchange="checkboxesfunct(this)" value="*"/><span class="slider round"></span></label><span class="desc">Multiplication</span></div>
+						<div><label for="quotient" class="switch"><input type="checkbox" id="quotient" class="check" onchange="checkboxesfunct(this)" value="//"/><span class="slider round"></span></label><span class="desc">Quotient</span></div>
+						<div><label for="reminder" class="switch"><input type="checkbox" id="reminder" class="check" onchange="checkboxesfunct(this)" value="%"/><span class="slider round"></span></label><span class="desc">Reminder</span></div>
+						<div><label for="power" class="switch"><input type="checkbox" id="power" class="check" onchange="checkboxesfunct(this)" value="**"/><span class="slider round"></span></label><span class="desc">Power</span></div>
+					</div>
+				</section>
+				<div id="play-box" class="grid-items item4">
+					<button onclick="userBox()" id="startQuiz">Start Quiz</button><div id="errorNote"></div>
+					<label for="answers" id="answerName"><span id="name">Question</span><br><span id="quiz">34 X 15 = ?</span></label>
+					<div id="answerInput"><p>Answer : </p><input type="number" id="answers" placeholder=""/><button id="submitBtn" onclick="submitBtn()">Submit</button></div>
+				</div>
+			</section>
+		</section>
+		<section id="result-sec">
+			<h1 id="appreciate">Practice makes perfect!</h1>
+			<ul id="ul-list"></ul>
+			<div>
+				<h2 id="say-skills">Score : <span id="score">65.34%</span></h2>
+				<h3>Keep learning!💡</h3>
+				<button id="home" onclick="goToHome()">Home</button>
+			</div>
+		</section>
+		<!-- Audio section -->
+		<section id="audio-sec">
+			<audio id="pongAudio" src="Ping_Pong_wav.mp3"></audio>
+		</section>
+	</section>
+
+	<script type="text/javascript" src="MathsGame_script.js"></script>
+</body>
+</html>
