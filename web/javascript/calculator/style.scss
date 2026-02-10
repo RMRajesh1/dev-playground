@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme&family=Kiwi+Maru:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:200, 300, 400, 500, 600, 700, 800, 900&display=swap');
+
+// variables :-
+$calcWidth: 400px;
+$calcHeight: 650px;
+$calcBgColor: 'rgba(0, 0, 0, 0.8)';
+$ripple_bg: #f3f3f3;
+
+$innerWidth: 97%;
+$innerHeight: 16%;
+
+$calc_bg: linear-gradient(to bottom, #444, #222);
+$blue_gradient: linear-gradient(90deg, #0162c8, #55e7fc);
+$pink_gradient: linear-gradient(90deg, #755bea, #ff72c0);
+
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 500px; 
+
+
+// @mixins :-
+@mixin makeFlexBox($isCenter){
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @if $isCenter {
+        justify-content: center;
+        align-items: flex-start;
+    }
+    @else{
+        justify-content: space-evenly;
+        align-content: space-evenly;
+    }
+}
+
+@mixin removeBorder {
+    border: none;
+    outline: none;
+}
+
+
+
+
+// element styling :-
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.1s;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #2b2b2b;
+}
+
+.calculatorBox{
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 150px;
+    @include makeFlexBox($isCenter: true);
+    position: relative;
+}
+
+.calcContainer{
+    width: $calcWidth;
+    height: $calcHeight;
+    background: $calcBgColor;
+    @include makeFlexBox($isCenter: false);
+    background: $calcBgColor;//$blue_gradient;
+    border-radius: 5px;
+    margin: 50px;
+    border: 2px solid #f3f3f3;
+}
+
+.subContainer{
+    width: $innerWidth;
+    height: 80%;
+    background: transparent;
+    @include makeFlexBox($isCenter: false);
+    button{
+        width: 24%;
+        height: 19%;
+        @include removeBorder();
+        font-size: 1.5em;
+        font-weight: 900;
+        font-family: 'Kiwi Maru', serif;
+        border-radius: 2px;
+        color: #f2f2f2;
+        background: none;
+    }
+    button:hover{
+        cursor: pointer;
+        font-size: 2em;
+    }
+    .dot{
+        font-size: 3em;
+        @include makeFlexBox($isCenter: true);
+    }
+    .dot:hover{
+        font-size: 3em;
+    }
+}
+
+.outputDisplay{
+    width: $innerWidth;
+    height: $innerHeight - 5;
+}
+
+.calcOutputDisplay{
+    width: $innerWidth;
+    height: $innerHeight;
+    margin: 15px 0px 10px;
+    padding: 15px;
+    font-size: 3em;
+    text-align: right;
+    font-family: 'BioRhyme', serif;
+    border-radius: 0;
+    color: #f2f2f2;
+    background: none;
+    @include removeBorder();
+    border-bottom: 2px solid #f3f3f3;
+    overflow: auto;
+}
+
+.calcOutputDisplay::placeholder{
+    opacity: 1;
+}
+
+button[data-type='addCalcBtn'], button[data-type='deleteCalcBtn']{
+    position: absolute;
+    top: 50px;
+    display: inline-block;
+    padding: 12px 36px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: $pink_gradient;
+    overflow: hidden;
+    @include removeBorder();
+    cursor: pointer;
+}
+
+button[data-type='addCalcBtn']{
+    left: 25%;
+}
+button[data-type='deleteCalcBtn']{
+    background: $blue_gradient;
+    right: 25%;
+}
+
+.addCalcBtn:hover{
+    cursor: pointer;
+}
+
+span[data-type='ripple']{
+    position: absolute;
+    background: $ripple_bg;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    100%{
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+
+
+@media (max-width: $breakpoint-tablet) {
+    button[data-type='addCalcBtn'], button[data-type='deleteCalcBtn']{
+        font-size: 15px;
+        top: 50px;
+    }
+    button[data-type='addCalcBtn']{
+        left: 10%;
+    }
+    button[data-type='deleteCalcBtn']{
+        right: 10%;
+    }
+
+    .calculatorBox{
+        padding-top: 100px;
+    }
+
+}
+
+@media (max-width: $breakpoint-mobile) {
+    button[data-type='addCalcBtn'], button[data-type='deleteCalcBtn']{
+        font-size: 15px;
+    }
+    button[data-type='addCalcBtn']{
+        left: 50%;
+        top: 5px;
+        transform: translateX(-50%);
+    }
+    button[data-type='deleteCalcBtn']{
+        transform: translateX(50%);
+        right: 50%;
+        top: 70px;
+    }
+    
+
+    .calculatorBox{
+        padding-top: 100px;
+    }
+    
+}
